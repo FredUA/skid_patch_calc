@@ -98,14 +98,6 @@ l1.addEventListener('change', changeLang);
 l2.addEventListener('change', changeLang);
 
 
-
-
-
-// $('.clickable').click( function() { //TODO: remove jQuery dialogs
-// 	var lang = $("input[name='lang']:checked").val();
-// 	$('#dialog'+"-"+$(this).attr('id')+'-'+lang).dialog('open');
-// });
-
 container.addEventListener('click', function(e) {
 	if ( e.target.classList.contains('clickable') ) {
 		const _id = `dialog-${e.target.id}-${lang}`;
@@ -224,7 +216,7 @@ function draw(){
 		for (var j=9; j<24; j++) {
 			if ( Math.abs(_ratio - i/j) < _ratio*0.02 ) {
 				_near = `${_near}<button class="equivalent"
-						onclick="r.value = '${i}'; s.value = '${j}'; draw(${i}, ${j});"
+						onclick="r.value = '${i}', s.value = '${j}', draw(${i}, ${j})"
 						title="${Math.round(i/j*100)/100}">
 							${i}&times;${j}
 						</button>`;

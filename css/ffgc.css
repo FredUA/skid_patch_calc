@@ -55,7 +55,7 @@ th {
 	position: relative;
 	padding: 0;
 	display: inline-block;
-	height: 15px;
+	height: 17px;
 }
 .clickable::after {
 	background-color: #ff0055;
@@ -255,7 +255,7 @@ dd {
 	outline: currentcolor none 0px;
 	height: auto;
 	width: 300px;
-	top: 50%;
+	top: 40%;
 	left: 50%;
 	border: 1px solid #aaaaaa;
 	background: #ffffff;
