@@ -1,0 +1,288 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+	<title>Fixed Gear Calculator - Ratio &amp; Skid Patch for all!</title>
+	<meta name="viewport" content="width=465; user-scalable=no">
+	<link type="text/css" href="./css/ffgc.css" rel="stylesheet" media="screen">
+	<link type="text/css" href="./css/jquery-ui-1.7.2.custom.css" rel="Stylesheet">
+	<script type="text/javascript" src="./js/jquery.js"></script>
+	<script type="text/javascript" src="./js/jquery-ui.js"></script>
+</head>
+
+<body id="body">
+	<div id="container">
+		<div id="salogo">
+			<a href="/" class="logo" title="Sorry Mom, I'm going home" onfocus="if(this.blur)this.blur()"><img src="./img/logo.png" alt="SURPLACE"></a>
+		</div>
+		<div class="banner">
+			<img src="./img/ffgc.png" alt="Fantastic Fixed Gear Calculator"><br>
+		</div>
+		<div id="settings">
+			<label for="l1">
+				<img src="./img/en.svg" class="flag" alt="english" width="21">
+				<input id="l1" type="radio" name="lang" value="en">
+			</label>
+			<label for="l2">
+				<img src="./img/fr.svg" class="flag" alt="fran�ais" width="21">
+				<input id="l2" type="radio" name="lang" value="fr">
+			</label>
+			<span class="sep"></span>
+			<div>
+				<label for="u1" class="multi units" id="s10">Imperial</label>
+				<input id="u1" type="radio" name="unit" value="i">
+			</div>
+			<div>
+				<label for="u2" class="multi units" id="s20">Metric</label>
+				<input id="u2" type="radio" name="unit" value="m">
+			</div>
+			<span class="sep"></span>
+			<button id="s60" class="multi clickable">À propos</button>
+		</div>
+		<div id="calc">
+			<h3 class="multi" id="s30">Settings</h3>
+			<canvas id="wheel" width="210" height="160"></canvas>
+			<div id="form">
+				<article class="form-group">
+					<label class="multi" id="s40">Chain ring</label>
+					<select id="r">
+						<option value="28">28 t</option>
+						<option value="29">29 t</option>
+						<option value="30">30 t</option>
+						<option value="31">31 t</option>
+						<option value="32">32 t</option>
+						<option value="33">33 t</option>
+						<option value="34">34 t</option>
+						<option value="35">35 t</option>
+						<option value="36">36 t</option>
+						<option value="37">37 t</option>
+						<option value="38">38 t</option>
+						<option value="39">39 t</option>
+						<option value="40">40 t</option>
+						<option value="41">41 t</option>
+						<option value="42">42 t</option>
+						<option value="43">43 t</option>
+						<option value="44">44 t</option>
+						<option value="45">45 t</option>
+						<option value="46" selected="selected">46 t</option>
+						<option value="47">47 t</option>
+						<option value="48">48 t</option>
+						<option value="49">49 t</option>
+						<option value="50">50 t</option>
+						<option value="51">51 t</option>
+						<option value="52">52 t</option>
+						<option value="53">53 t</option>
+						<option value="54">54 t</option>
+						<option value="55">55 t</option>
+						<option value="56">56 t</option>
+						<option value="57">57 t</option>
+						<option value="58">58 t</option>
+						<option value="59">59 t</option>
+					</select>
+				</article>
+				<article class="form-group">
+					<label class="multi" id="s50">Sproket</label>
+					<select id="s">
+						<option value="9">9 t</option>
+						<option value="10">10 t</option>
+						<option value="11">11 t</option>
+						<option value="12">12 t</option>
+						<option value="13">13 t</option>
+						<option value="14">14 t</option>
+						<option value="15">15 t</option>
+						<option value="16">16 t</option>
+						<option value="17">17 t</option>
+						<option value="18" selected="selected">18 t</option>
+						<option value="19">19 t</option>
+						<option value="20">20 t</option>
+						<option value="21">21 t</option>
+						<option value="22">22 t</option>
+						<option value="23">23 t</option>
+					</select>
+				</article>
+				<article class="form-group">
+					<label for="t" class="multi" id="s70">Tire</label>
+					<select id="t">
+						<option value="2325">700x56 (622-56)</option>
+						<option value="2293">700x50 (622-50)</option>
+						<option value="2224">700x44 (622-44)</option>
+						<option value="2180">700x38 (622-38)</option>
+						<option value="2168">700x35 (622-35)</option>
+						<option value="2155">700x32 (622-32)</option>
+						<option value="2136">700x28 (622-28)</option>
+						<option value="2105">700x25 (622-25)</option>
+						<option value="2097" selected="selected">700x23 (622-23)</option>
+						<option value="2086">700x20 (622-20)</option>
+						<option value="2169">27x1'3/8 (630-35)</option>
+						<option value="2161">27x1'1/4 (630-32)</option>
+						<option value="2155">27x1'1/8 (630-28)</option>
+						<option value="2145">27x1' (630-25)</option>
+						<option value="2070">26x2'1/8 (559-54)</option>
+						<option value="2055">26x1.9' (559-47)</option>
+						<option value="1985">26x1'/2 (559-38)</option>
+						<option value="1953">26x1'1/4 (559-32)</option>
+						<option value="1913">26x1' (559-25)</option>
+						<option value="1952">26x1' (571-25)</option>
+						<option value="1952">650C (571-25)</option>
+						<option value="2117">Tubular (Wide)</option>
+						<option value="2105">Tubular (Narrow)</option>
+						<option value="2068">26x1 3/8 (590-35)</option>
+						<option value="1916">24 (Most)</option>
+						<option value="1753">24x1 (520-25)</option>
+						<option value="1491">20x1'3/4 (406-44)</option>
+						<option value="1618">20x1'1/4 (451-28)</option>
+						<option value="1367">18x1'1/2 (355-40)</option>
+						<option value="1325">17x1'1/4 (369-28)</option>
+						<option value="1282">16x1'3/8 (349-35)</option>
+						<option value="1079">16x1'1/2 (305-37)</option>
+					</select>
+				</article>
+				<article class="form-group">
+					<label for="a" class="multi" id="s80">Ambidextrous skid</label><input type="checkbox" name="a" id="a" style="float: right;">
+				</article>
+			</div>
+			<h3 class="multi" id="s90">Analysis</h3>
+			<div id="results">
+				<div class="results-group">
+					<div><button class="multi clickable" id="s100">Ratio</button> :</div>
+					<span id="ratio"></span>
+				</div>
+				<div class="results-group">
+					<div><button class="clickable multi" id="s110">Skid patch</button> :</div>
+					<span id="skidpatch"></span>
+				</div>
+				<div class="results-group">
+					<div><button class="clickable multi" id="s120">Development</button> :</div>
+					<span id="dev"></span>
+				</div>
+			</div>
+		</div>
+		<div id="more">
+			<h3 class="multi" id="s130">Equivalent gear ±2%</h3>
+			<section id="near">
+			</section>
+			<h3 class="multi" id="s140">Cadence / Speed</h3>
+			<section id="speeds">
+			</section>
+		</div>
+		<div id="copyright">© surplace 2021</div>
+		<div class="overlay js-overlay"></div>
+		<div class="dialog corner-all" id="dialog-s60-en">
+			<div class="dialog-titlebar corner-all">
+				<span class="dialog-title">About</span>
+				<a href="#" class="dialog-titlebar-close js-close corner-all" role="button">
+					+
+				</a>
+			</div>
+			<div class="dialog-content">
+				<p>The "Fantastic Fixed Gear Calculator" is proudly made and brought to you by the <a href="http://www.surplace.fr">SURPLACE</a> team.</p>
+				<p>All tires circumference data comes from the fantastic <a href="http://www.sheldonbrown.com/">Sheldon Brown website</a>.</p>
+				<p>Thanks to <a href="http://lajalousie.net/">lajalousie</a> for rectifying <a href="http://www.pignonfixe.com/comments.php?DiscussionID=84&amp;page=35#Item_18">ambidextrous skid patch calculation method</a></p>
+				<p>Due to the lack of a good <i>canvas</i> and <i>html5</i> support, it probably won't work under Internet Explorer, but who cares? - anyway, it works under Firefox, Opera, Safari, iPhone...</p>
+				<p>Please enjoy! and feel free to <a href="http://www.surplace.fr/contact">contact us</a> if any suggestion :)</p>
+			</div>
+		</div>
+		<div class="dialog corner-all" id="dialog-s60-fr">
+			<div class="dialog-titlebar corner-all">
+				<span class="dialog-title">À propos</span>
+				<a href="#" class="dialog-titlebar-close js-close corner-all" role="button">
+					+
+				</a>
+			</div>
+			<div class="dialog-content">
+				<p>Le "Fantastic Fixed Gear Calculator" vous est gentillement offert par l'�quide de <a href="http://www.surplace.fr">SURPLACE</a>, ouai ouai on est sympa.</p>
+				<p>Toutes les donn�es relatives aux circonf�rences de pneu proviennent du fantastique site de <a href="http://www.sheldonbrown.com/">Sheldon Brown</a>.</p>
+				<p>Merci &eacute; <a href="http://lajalousie.net/">lajalousie</a> pour les corrections apport�es au <a href="http://www.pignonfixe.com/comments.php?DiscussionID=84&amp;http://www.pignonfixe.com/comments.php?DiscussionID=84&amp;page=35#Item_18">calcul des skid patchs ambidextres</a></p>
+				<p>A cause du manque de support (correct) des <i>canvas</i> et d'<i>html5</i>, �a ne marchera probablement pas (ou mal) dans Internet Explorer, mais �a int�resse qui? Sinon �a tourne sous Firefox, Opera, Safari, iPhone...</p>
+				<p>Alors profitez ! et n'h�sitez pas &eacute; <a href="http://www.surplace.fr/contact"> nous contacter</a> pour toute suggestion :)</p>
+			</div>
+		</div>
+		<div class="dialog corner-all" id="dialog-s100-en">
+			<div class="dialog-titlebar corner-all">
+				<span class="dialog-title">Ratio</span>
+				<a href="#" class="dialog-titlebar-close js-close corner-all" role="button">
+					+
+				</a>
+			</div>
+			<div class="dialog-content">
+				<p>The ratio of chainring teeth to rear sprocket teeth, in other words, how many times your rear wheel turns with each revolution of the pedals.</p>
+				<p>For example :</p>
+				<p>
+					- ratio &lt; 1,9 : Bike polo<br>
+					- 1,9 &lt; ratio &lt; 2,3 : lot of steep slopes<br>
+					- 2,3 &lt; ratio &lt; 2,7 : polyvalent ratio<br>
+					- ratio &gt; 2,7 : high speed on flat roads (take care of your knees)<br>
+				</p>
+			</div>
+		</div>
+		<div class="dialog corner-all" id="dialog-s100-fr" >
+			<div class="dialog-titlebar corner-all">
+				<span class="dialog-title">Ratio</span>
+				<a href="#" class="dialog-titlebar-close js-close corner-all" role="button">
+					+
+				</a>
+			</div>
+			<div class="dialog-content">
+				<p>Le ratio, c'est le rapport entre le nombre de dents du plateau et du pignon, c'est-&eacute;-dire le nombre de tours de roues effectu�s pour 1 tour de p�dalier.</p>
+				<p>A titre d'exemple :</p>
+				<p>
+					- ratio &lt; 1,9 : Bike polo<br>
+					- 1,9 &lt; ratio &lt; 2,3 : nombreux d�nivel�s<br>
+					- 2,3 &lt; ratio &lt; 2,7 : ratio polyvalent<br>
+					- ratio &gt; 2,7 : pour envoyer sur le plat (attention aux genoux)<br>
+				</p>
+			</div>
+		</div>
+		<div class="dialog corner-all" id="dialog-s110-en">
+			<div class="dialog-titlebar corner-all">
+				<span class="dialog-title">Skid patch</span>
+				<a href="#" class="dialog-titlebar-close js-close corner-all" role="button">
+					+
+				</a>
+			</div>
+			<div class="dialog-content">
+				<p>While skidding, you always brake with your feet - and the crank - in the same position</p>
+				<p>You can predict how many spots will wear on your rear tire. These spots are called skid patches.
+				</p>
+			</div>
+		</div>
+		<div class="dialog corner-all" id="dialog-s110-fr">
+			<div class="dialog-titlebar corner-all">
+				<span class="dialog-title">Skid patch</span>
+				<a href="#" class="dialog-titlebar-close js-close corner-all" role="button">
+					+
+				</a>
+			</div>
+			<div class="dialog-content">
+				<p>Le nombre de points d'usure sur le pneu cr��s par les freinages en skid (d�rapage de la roue arri�re par blocage des jambes).</p>
+				<p>Plus le nombre est �lev�, plus l'usure sera r�partie uniform�ment sur le pneu.</p>
+			</div>
+		</div>
+		<div class="dialog corner-all" id="dialog-s120-en">
+			<div class="dialog-titlebar corner-all">
+				<span class="dialog-title">Development</span>
+				<a href="#" class="dialog-titlebar-close js-close corner-all" role="button">
+					+
+				</a>
+			</div>
+			<div class="dialog-content">
+				<p>This is the distance that the bicycle moves with each revolution of the pedals.</p>
+			</div>
+		</div>
+		<div class="dialog corner-all" id="dialog-s120-fr">
+			<div class="dialog-titlebar corner-all">
+				<span class="dialog-title">D&eacute;veloppement</span>
+				<a href="#" class="dialog-titlebar-close js-close corner-all" role="button">
+					+
+				</a>
+			</div>
+			<div class="dialog-content">
+				<p>C'est la distance parcourue par le v�lo &eacute; chaque tour complet de p�dalier.</p>
+			</div>
+		</div>
+	</div>
+	<script type="text/javascript" src="./js/ffgc.js"></script>
+</body>
+
+</html>
